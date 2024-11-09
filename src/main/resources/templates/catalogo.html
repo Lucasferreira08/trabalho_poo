@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Animais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+
+    <div>
+        <h4 class="text-center" >Lista de Animais</h4>
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>Imagem</th>
+            <th>Nome Popular</th>
+            <th>Idade</th>
+            <th>Sexo</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="animal : ${animais}">
+            <td>
+                <img th:src="@{${animal.getImagemUrl()}}" alt="Imagem do animal" style="width: 100px; height: auto;">
+            </td>
+            <td th:text="${animal.nomePopular}">Nome Popular</td>
+            <td th:text="${animal.idade}">Idade</td>
+            <td th:text="${animal.sexo}">Sexo</td>
+            <td class="text-center">
+                <a th:href="@{/animais/details/{id}(id=${animal.id})}" class="btn btn-info btn-sm">
+                    <span class="fa fa-search"></span> Ver Detalhes
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

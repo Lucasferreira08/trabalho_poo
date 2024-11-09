@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="'Detalhes do Animal - ' + ${animal.nomePopular}">Detalhes do Animal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-4">
+  <h4 th:text="'Detalhes do Animal: ' + ${animal.nomePopular}">Detalhes do Animal</h4>
+
+  <div class="row">
+    <div class="col-md-4">
+      <img th:src="@{${animal.getImagemUrl()}}" alt="Imagem do Animal" class="img-fluid" style="max-width: 100%; height: auto;">
+    </div>
+
+    <div class="col-md-8">
+      <table class="table table-bordered">
+        <tr>
+          <th>Nome Popular</th>
+          <td th:text="${animal.nomePopular}">Nome Popular</td>
+        </tr>
+        <tr>
+          <th>Idade</th>
+          <td th:text="${animal.idade}">Idade</td>
+        </tr>
+        <tr>
+          <th>Sexo</th>
+          <td th:text="${animal.getSexo()}">Sexo</td>
+        </tr>
+        <tr>
+          <th>História</th>
+          <td th:text="${animal.historia}">História</td>
+        </tr>
+        <tr>
+          <th>Curiosidade</th>
+          <td th:text="${animal.curiosidade}">Curiosidade</td>
+        </tr>
+      </table>
+
+      <!-- Botão para abrir o modal de vídeo -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal">
+        <i class="fa fa-video"></i> Assistir Vídeo
+      </button>
+
+    </div>
+  </div>
+
+  <a href="/animais" class="btn btn-secondary mt-3">
+    <i class="fa fa-arrow-left"></i> Voltar à Lista de Animais
+  </a>
+</div>
+
+<!-- Modal de vídeo -->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">Vídeo sobre o Animal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Vídeo do YouTube -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe th:src="'https://www.youtube.com/embed/' + ${animal.video}" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Animais</title>
+    <style>
+        .animal-list { display: flex; flex-wrap: wrap; gap: 20px; }
+        .animal-card { border: 1px solid #ccc; padding: 10px; width: 200px; text-align: center; }
+    </style>
+</head>
+<body>
+
+<h1>Lista de Animais</h1>
+
+<div class="animal-list">
+    <div th:each="animal : ${animais}" class="animal-card">
+
+        <h3 th:text="${animal.getNomePopular()}">Nome Popular</h3>
+        <p th:text="${animal.getSexo()}"><i>Nome Científico</i></p>
+    </div>
+</div>
+
+</body>
+</html>
