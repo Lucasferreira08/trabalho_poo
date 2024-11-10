@@ -1,4 +1,5 @@
 package com.snake.zoologico_spring_mvc.controllers.services;
+import com.snake.zoologico_spring_mvc.controllers.interfaces.servicesInterface;
 import com.snake.zoologico_spring_mvc.models.Informativo;
 import com.snake.zoologico_spring_mvc.models.Leigo;
 import org.springframework.stereotype.Service;
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class AnimalLegService {
+public class AnimalLegService implements servicesInterface {
 
     private List<Informativo> animais = new ArrayList<>();
 
