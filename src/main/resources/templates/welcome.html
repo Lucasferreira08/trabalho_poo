@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${title}">Bem-vindo ao Zoo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container text-center mt-5">
+  <h1 class="mb-4" th:text="${title}">Bem-vindo ao Zoo!</h1>
+  <p>Escolha o perfil desejado para explorar as informações do zoológico.</p>
+
+  <div class="d-flex justify-content-center mt-4">
+    <a href="/perfilLeigo" class="btn btn-primary mx-2">
+      <span class="fa fa-user"></span> Perfil Leigo
+    </a>
+    <a href="/perfilTecnico" class="btn btn-secondary mx-2">
+      <span class="fa fa-user-cog"></span> Perfil Técnico
+    </a>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

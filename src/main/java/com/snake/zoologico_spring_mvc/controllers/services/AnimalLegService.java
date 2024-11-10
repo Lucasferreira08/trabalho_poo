@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class AnimalService {
+public class AnimalLegService {
 
     private List<Informativo> animais = new ArrayList<>();
 
-    public AnimalService() {
+    public AnimalLegService() {
         this.animais.add(new Leigo("teste", 18, "https://images.pexels.com/photos/132434/pexels-photo-132434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "n0msj0Vho9k?si=RXlJO9ni0eZHMgUH", "male", "testeImagem", "curiosidade"));
         this.animais.add(new Leigo("teste2", 18, "https://images.pexels.com/photos/15821364/pexels-photo-15821364/free-photo-of-leao-safari-perigo-risco.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "n0msj0Vho9k?si=RXlJO9ni0eZHMgUH", "testeImagem", "testeImagem", "curiosidade"));
         this.animais.add(new Leigo("teste3", 18, "https://images.pexels.com/photos/18001017/pexels-photo-18001017/free-photo-of-natureza-passaro-ave-passarinho.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "n0msj0Vho9k?si=RXlJO9ni0eZHMgUH", "testeImagem", "testeImagem", "curiosidade"));

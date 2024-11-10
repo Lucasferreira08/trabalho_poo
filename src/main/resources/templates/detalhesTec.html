@@ -10,35 +10,43 @@
 <body>
 
 <div class="container mt-4">
+
   <h4 th:text="'Detalhes do Animal: ' + ${animal.nomePopular}">Detalhes do Animal</h4>
 
   <div class="row">
+
     <div class="col-md-4">
       <img th:src="@{${animal.getImagemUrl()}}" alt="Imagem do Animal" class="img-fluid" style="max-width: 100%; height: auto;">
     </div>
 
     <div class="col-md-8">
       <table class="table table-bordered">
+
         <tr>
           <th>Nome Popular</th>
           <td th:text="${animal.nomePopular}">Nome Popular</td>
         </tr>
+
         <tr>
           <th>Idade</th>
           <td th:text="${animal.idade}">Idade</td>
         </tr>
+
         <tr>
           <th>Sexo</th>
           <td th:text="${animal.getSexo()}">Sexo</td>
         </tr>
+
         <tr>
-          <th>História</th>
-          <td th:text="${animal.historia}">História</td>
+          <th>Nome Científico</th>
+          <td th:text="${animal.nomeCientifico}">Nome Científico</td>
         </tr>
+
         <tr>
-          <th>Curiosidade</th>
-          <td th:text="${animal.curiosidade}">Curiosidade</td>
+          <th>Reprodução</th>
+          <td th:text="${animal.reproducao}">Reprodução</td>
         </tr>
+
       </table>
 
       <!-- Botão para abrir o modal de vídeo -->
@@ -49,9 +57,10 @@
     </div>
   </div>
 
-  <a href="/animais" class="btn btn-secondary mt-3">
+  <a href="/animais1" class="btn btn-secondary mt-3">
     <i class="fa fa-arrow-left"></i> Voltar à Lista de Animais
   </a>
+
 </div>
 
 <!-- Modal de vídeo -->
